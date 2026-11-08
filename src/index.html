@@ -1,13 +1,29 @@
-<!DOCTYPE html>
-<html lang="uk">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GoIT · Домашнє завдання</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Image Search</title>
   </head>
   <body>
-    <!-- Розмітку додавай тут за технічним завданням -->
+    <main class="container">
+      <form class="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          placeholder="Search images..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <ul class="gallery"></ul>
+
+      <button class="load-more is-hidden" type="button">Load more</button>
+
+      <p class="loader is-hidden">Loading images, please wait...</p>
+    </main>
 
     <script type="module" src="./main.js"></script>
   </body>

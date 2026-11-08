@@ -1,10 +1,141 @@
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #2e2f42;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.search-form input {
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-form input:hover {
+  border-color: #000000;
+}
+
+.search-form input:focus {
+  border-color: #4e75ff;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6c8cff;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  text-align: left;
+}
+
+.gallery-item {
+  border: 1px solid #808080;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.gallery-link {
+  display: block;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.image-info {
+  display: flex;
+  justify-content: space-around;
+  gap: 4px;
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.image-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.image-info strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.image-info span {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.load-more {
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.loader {
+  margin: 16px auto;
+  font-size: 14px;
+  color: #555555;
+}
+
+.is-hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .search-form input {
+    width: 100%;
+    min-width: 0;
+  }
 }
