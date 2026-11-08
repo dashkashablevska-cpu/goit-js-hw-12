@@ -16,14 +16,14 @@ body {
   text-align: center;
 }
 
-.search-form {
+.form {
   display: flex;
   justify-content: center;
   gap: 8px;
   margin-bottom: 32px;
 }
 
-.search-form input {
+.form input {
   width: 272px;
   height: 40px;
   padding: 8px 16px;
@@ -31,13 +31,19 @@ body {
   border-radius: 4px;
   outline: none;
   font-size: 16px;
+  background-color: #ffffff;
+  color: #2e2f42;
 }
 
-.search-form input:hover {
+.form input::placeholder {
+  color: #808080;
+}
+
+.form input:hover {
   border-color: #000000;
 }
 
-.search-form input:focus {
+.form input:focus {
   border-color: #4e75ff;
 }
 
@@ -50,6 +56,7 @@ button {
   font-weight: 500;
   padding: 8px 16px;
   cursor: pointer;
+  transition: background-color 250ms ease;
 }
 
 button:hover {
@@ -74,6 +81,7 @@ button:hover {
 
 .gallery-link {
   display: block;
+  text-decoration: none;
 }
 
 .gallery-image {
@@ -81,6 +89,11 @@ button:hover {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.03);
 }
 
 .image-info {
@@ -111,12 +124,25 @@ button:hover {
 .load-more {
   display: block;
   margin: 0 auto 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.load-more:hover {
+  background-color: #6c8cff;
 }
 
 .loader {
+  display: block;
   margin: 16px auto;
   font-size: 14px;
   color: #555555;
+  text-align: center;
 }
 
 .is-hidden {
@@ -130,12 +156,29 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: 1fr;
+  .container {
+    padding: 16px;
   }
 
-  .search-form input {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form {
+    gap: 8px;
+  }
+
+  .form input {
     width: 100%;
     min-width: 0;
+  }
+
+  .gallery-image {
+    height: 220px;
+  }
+
+  .image-info {
+    padding: 8px;
   }
 }
